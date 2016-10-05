@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intermediate Python</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      .signature {
+        position: absolute;
+        bottom: 3em;
+        margin-left: 650px;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+      .right-column-cont {
+        width: 75%;
+        float: right;
+      }
+      /*Image Classes*/
+      .thumbnail img {
+        height: 175px;
+        width: 175px;
+      }
+
+      .mid img {
+        height: 350px;
+        width: 350px;
+      }
+
+      .wide img {
+        height: 200px;
+        width: 600px;
+      }
+
+      .full img {
+        height: 480px;
+        width: 590px;
+      }
+
+      .tall img {
+        height: 450px;
+        width: 200px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+# Welcome to Intermediate Python!
+  .red[Sunggyun Kim]
+
+    Software Engineer & Data Scientist
+    Booz Allen Hamilton
+---
+name: main
+layout: true
+
+.signature[Sung Kim]
+---
+
+.left-column[
+## Introductions
+]
+
+.right-column[
+## Hi there! I am... Sung Kim
+
+I'm a Software Engineer & Data Scientist at Booz Allen Hamilton.
+
+I'm [@sk187](http://twitter.com/@sk187) and just about everywhere else.
+]
+
+---
+.left-column[
+## Introductions
+]
+
+.right-column[
+## Ice Breaker!
+
+Since were are going to be spending bit of time together, lets introduce ourselves :D
+
+]
+
+--
+.right-column-cont[
+## Please say your:
+  -  Name
+  -  What you do
+  -  What you hope to get out of this class
+]
+---
+.left-column[
+## Introductions
+## Agenda
+]
+
+.right-column[
+## Topics
+- Data Types
+
+- String Manipulation
+
+- List Manipulation
+
+- Tuple Manipulation
+
+- Dictionary Manipulation
+
+- For, If & While Loops
+]
+---
+template: inverse
+
+# Data Types
+---
+.left-column[
+## Data Types
+]
+
+.right-column[
+  # Type Function
+  In Python, there is a built in function called type() that allows us to ge the data type
+  of a particular object.
+
+```python
+  type(4)
+    => <type 'int'>
+
+  type(2.7)
+    => <type 'float'>
+
+  type(27L)
+    => <type 'long'>
+
+  type("Data Science")
+    => <type 'str'>
+
+  type(False)
+    => <type 'bool'>
+```
+]
+---
+.left-column[
+## Data Types
+]
+
+.right-column[
+  # Isinstance Function
+  Python also has a handy isinstance() function that allows you to check if x
+  is y.
+
+  ```python
+  isinstance(x,y)
+  # Is Data X Type Y?
+  # Returns True or False
+
+  isinstance(1, float)
+
+  isinstance(1.0, int)
+
+  isinstance(2L, long)
+
+  isinstance("Data Science", str)
+
+  isinstance(False, bool)
+  ```
+]
+---
+template: inverse
+
+# Exercise: DataType Manipulation
+---
+.left-column[
+## Data Types
+## Strings
+]
+
+.right-column[
+  EXERCISE:
+  ```python
+    Write a method called e() that
+      1. Determines what data type the input is
+
+      2. It returns the input and datatype in a string
+      only for strings.
+        " INPUT is a <type DATATYPE>"
+
+        e('hi')
+        => "hi is a <type 'str'>"
+
+      If the input is a int or float return the following
+        e(5)
+        => 'Input cannot be an int'
+
+        e(5.0)
+        => 'Input cannot be a float'
+  ```
+  ```python
+    # Starter Code
+    def e(input):
+    	datatype = type(input)
+    	if .... :
+    		return "Input cannot be an int"
+    	elif ... :
+    		return "Input cannot be a float"
+    	else:
+    		return "%s is a %s" %(input, datatype)
+  ```
+]
+---
+.left-column[
+## Data Types
+## Strings
+]
+
+.right-column[
+  Solution:
+  ```python
+  def e(input):
+    datatype = type(input)
+    if isinstance(input, int):
+      return "Input cannot be an int"
+    elif isinstance(input, float):
+      return "Input cannot be a float"
+    else:
+      return "%s is a %s" %(input, datatype)
+  ```
+]
+---
+template: inverse
+
+# String Manipulation
+---
+.left-column[
+## Data Types
+## Strings
+]
+
+.right-column[
+## Injecting Variables into a String
+
+```python
+Example 1
+  float_num = 5.0
+  string = 'Apple'
+  print '%s people to 1 %s' %(float_num,string)
+
+  # Returns
+  5.0 people to 1 Apple
+
+Example 2
+  print '%(language)s has %(number)i quote types.' % \
+  {"language": "Python", "number": 2}
+
+  # Returns
+  Python has 2 quote types.
+
+  %s tells python to use the str() function while %i tells
+  python the variable is an int.
+```
+]
+
+---
+.left-column[
+## Data Types
+## Strings
+]
+
+.right-column[
+## Concatenate Two Strings
+
+```python
+s1 = "What is the air-speed velocity"
+s2 = "of an unladen swallow?"
+
+# Concatenate two strings
+s = s1 + " " + s2
+
+# Also, equivalently
+s = " ".join([s1, s2])
+
+s
+# => 'What is the air-speed velocity of an unladen swallow?'
+```
+]
+---
+.left-column[
+## Data Types
+## Strings
+]
+
+.right-column[
+## Replace a substring with another substring
+
+```python
+s = 'What is the air-speed velocity of an unladen swallow?'
+
+s = s.replace("unladen", "unladen African")
+
+s
+# => 'What is the air-speed velocity of
+#      an unladen African swallow?'
+```
+]
+---
+.left-column[
+## Data Types
+## Strings
+]
+
+.right-column[
+## Indexes and Strings
+
+```python
+s = 'What is the air-speed velocity of an unladen swallow?'
+# Return the index of the first instance of a string
+s.find("swallow")
+
+# => 53
+
+# Slice the string
+s[-8:]
+# => 'swallow?'
+
+s[s.find("swallow"):]
+# => 'swallow?'
+```
+]
+---
+.left-column[
+## Data Types
+## Strings
+]
+
+.right-column[
+## Capitalization and Lower Case
+```python
+"swallow".upper()
+# => "SWALLOW"
+
+"SWALLOW".lower()
+# => 'swallow'
+
+"swallow".capitalize()
+#=> 'Swallow'
+```
+]
+---
+.left-column[
+## Data Types
+## Strings
+]
+
+.right-column[
+## Counting Instances of a substring in string
+
+```python
+s = 'What is the air-speed velocity of an unladen swallow?'
+
+s.count(' ')
+# => 9
+
+s.count('swallow')
+# => 1
+
+s.count('what')
+# => 0
+
+s.count('What')
+# => 1
+```
+]
+---
+template: inverse
+
+# Exercise: String Manipulation
+---
+.left-column[
+## Data Types
+## Strings
+]
+
+.right-column[
+EXERCISE:
+```python
+s1 = 'What is the air-speed velocity'
+s2 = 'of an unladen swallow?'
+
+1. Combine s1 and s2 into a new varible called s
+
+2. Replace "unladen" with "unladen african" in s
+
+3. Count how many spaces there are in s
+
+4. Get the index of swallow in s
+
+5. Print a statement with the correct counts so that
+"There are __ spaces and sallow is at the __ index"
+
+With either varible string injection method we learned
+
+Bonus
+6. Using string slicing, replace & then capitalize african in s
+```
+]
+---
+.left-column[
+## Data Types
+## Strings
+]
+
+.right-column[
+  Solution:
+```python
+s1 = 'What is the air-speed velocity'
+s2 = 'of an unladen swallow?'
+
+1. Combine s1 and s2 into a new varible called s
+s = s1 + " " + s2
+
+2. Capitalize "african"
+s.find("african".capitalize())
+
+3. Count how many spaces there are in s
+s.count(" ")
+
+4. Get the index of swallow in s
+s.find("swallow")
+
+5. Print a statement with the correct counts so that
+spaces = s.count(" ")
+index = s.find("swallow")
+"There are %s spaces, sallow index = %s" %(spaces, index)
+
+Bonus
+6. Using string slicing, replace, capitalize african in s
+  s[s.find('african') : s.find('african') + len('african')].capitalize()
+  ```
+]
+---
+template: inverse
+
+# List Manipulation
+---
+.left-column[
+## Data Types
+## Strings
+## Lists
+]
+
+.right-column[
+## List Slicing
+
+```python
+lis = [0,1,2,3,4,5]
+
+lis[1]
+# => 1 not 0 as lists indexes start at 0
+
+lis[0:4]
+# => [0,1,2,3]
+
+lis[4:]
+# => [4,5]
+
+lis[:4]
+# => [0,1,2,3]
+
+lis[-1]
+# => 5
+
+lis[-3:]
+# => [3,4,5]
+```
+]
+---
+.left-column[
+## Data Types
+## Strings
+## Lists
+]
+
+.right-column[
+## List Element Mutability
+List items are mutable aka. they can be changed.
+```python
+lis = [0,1,2,3,4,5]
+
+lis[4] = 100
+lis[4]
+# => 100
+
+lis[0:3] = ["Guido", "Van", "Rossum"]
+lis[3:7] = ["created", "python,", "programming", "language,"]
+
+lis
+# => ['Guido', 'Van', 'Rossum', 'created', 'python,', 'programming', 'language,']
+
+# Check if an element is in a list
+"Van" in lis    # returns True
+```
+]
+---
+.left-column[
+## Data Types
+## Strings
+## Lists
+]
+
+.right-column[
+## Sorting / Length
+
+```python
+lis = [0,1,2,3,4,5]
+
+# checking length
+len(lis)      # returns 6
+
+# sorting
+sorted(lis)               # sorts the list
+
+sorted(lis, reverse=True)
+# reverse=True is an 'optional argument'
+
+sorted(lis, True)
+# error because optional arguments must be named
+
+```
+]
+---
+.left-column[
+## Data Types
+## Strings
+## Lists
+]
+
+.right-column[
+## Appending
+
+```python
+lis = [0,1,2,3,4,5]
+
+# appending
+lis[6] = 6
+# error because you can't assign outside the existing range
+
+list.append(6)     # list method that appends 6 to the end
+lis = lis + ['hi']     # use plus sign to combine lists
+# => [0, 1, 2, 3, 4, 5,'hi']
+
+# Elements can be removed with the .remove method
+lis.remove('hi')
+# => [0, 1, 2, 3, 4, 5]
+
+# Elements can be added to the end of a
+# list using the .append method
+lis.append("in 1991")
+
+# Elements can be inserted into list
+# This pushes the first arugment to the right
+# Then inserts the second arugment
+lis.insert(5,"a")
+lis
+# => [0, 1, 2, 3, 4, 'a', 5]
+```
+]
+---
+.left-column[
+## Data Types
+## Strings
+## Lists
+]
+
+.right-column[
+## Nested Lists
+
+```python
+# Lists can be nested within each other
+# List of three lists
+lis = [[1,2,3],[4,5,6],[7,8,9]]
+
+# Lets try to access a particular number, say 6
+lis[1][2]
+
+# A list within a list  within a list
+# within a list within a list
+lis = [1,2,[3,4,[5,6,[7,8]]]]
+```
+]
+
+---
+template: inverse
+# Exercise: Lists
+---
+.left-column[
+## Data Types
+## Strings
+## Lists
+]
+
+.right-column[
+## EXERCISE:
+```python
+1. Create a list of the first names
+of your family members.
+
+2. Print the name of the last person in the list.
+
+3. Print the length of the name of the first
+person in the list.
+
+4. Change one of the names from their real name
+to their nickname.
+
+5. Append a new person to the list.
+
+6. Change the name of the new person to lowercase
+using the string method 'lower'.
+
+7. Sort the list in reverse alphabetical order.
+
+8. Bonus: Sort the list by the length of the names
+(shortest to longest).
+```
+]
+---
+.left-column[
+## Data Types
+## Strings
+## Lists
+]
+
+.right-column[
+## Solution:
+```python
+names = ['Casey', 'Sunggyun', 'Michael']
+# list of names
+
+names[-1]
+# last element
+
+len(names[0])
+# length of first string
+
+names[1] = 'Sung'
+# overwrite existing element
+
+names.append('Wes')
+# append new element
+
+names[-1] = names[-1].lower()
+# change last string to be lowercase
+
+sorted(names, reverse=True)
+# sort the list in reverse order
+
+sorted(names, key=len)
+# sort the list by length
+
+```
+]
+---
+
+.left-column[
+## Data Types
+## Strings
+## Lists
+]
+
+.right-column[
+## List Comprehension
+
+```python
+# List comprehension is a popular construct
+# in the python programming language:
+# Takes an iterable as the input, performs a
+# function on each element of that
+# input, and returns a list
+
+# Say you have a list and you want to do
+# something to every element, or a subset of
+# this list
+
+numbers = [100, 45, 132.0, 1, 0, 0.3, 0.5, 1, 3]
+
+# Long form using a for loop
+lis1 = []
+for x in numbers:
+    if isinstance(x,int):
+        lis1.append(5*x)
+
+# Short form using list comprehension
+lis2 = [x * 5 for x in numbers if isinstance(x, int)]
+```
+]
+---
+template:inverse
+# Exercise: List Comprehension
+---
+.left-column[
+## Data Types
+## Strings
+## Lists
+]
+
+.right-column[
+## Challenges
+
+```python
+EXERCISE 1:
+Given that: letters = ['a', 'b', 'c']
+Write a list comprehension that returns: ['A', 'B', 'C']
+
+EXERCISE 2 (BONUS):
+Given that: word = 'abc'
+Write a list comprehension that returns: ['A', 'B', 'C']
+
+EXERCISE 3 (BONUS):
+Given that: fruits = ['Apple', 'Banana', 'Cherry']
+Write a list comprehension that returns: ['A', 'B', 'C']
+```
+]
+---
+
+.left-column[
+## Data Types
+## Strings
+## Lists
+]
+
+.right-column[
+## Solution:
+```python
+letters = ['a', 'b', 'c']
+[letter.upper() for letter in letters]
+# iterate through a list of strings,
+# and each string has an 'upper' method
+
+word = 'abc'
+[letter.upper() for letter in word]
+# iterate through each character
+
+fruits = ['Apple', 'Banana', 'Cherry']
+[fruit[0] for fruit in fruits]
+# slice the first character from each string
+
+```
+]
+---
+template: inverse
+
+# Dictionary Manipulation
+---
+.left-column[
+## Data Types
+## Strings
+## Lists
+## Dictionary
+]
+
+.right-column[
+# Keys and Values
+```python
+dct = {"Name": "Monty Python and the Flying Circus",
+       "Description": "British Comedy Group",
+       "Known for": ["Irreverant Comedy",
+       "Monty Python and the Holy Grail"],
+       "Years Active" : 17,
+       "# Members": 6}
+
+# Access an element within the list
+dct["Years Active"]
+
+# Add a new item to a list within the dictionary
+dct["Known for"].append("Influencing SNL")
+
+# Returns the keys
+dct.keys()
+
+# Returns the values
+dct.values()
+```
+]
+---
+
+.left-column[
+## Data Types
+## Strings
+## Lists
+## Dictionary
+]
+
+.right-column[
+## Nested Dictionaries
+
+```python
+# Create a dictionary within the 'dct' dictionary
+dct["Influence"] =
+{ "Asteroids": [13681, 9618, 9619, 9620, 9621, 9622],
+  "Technology": ["Spam", "Python", "IDLE (for Eric Idle)"],
+  "Food": ["Monty Python's Holy Ale", "Vermonty Python"]}
+
+# Accessing a nested dictionary item
+dct["Influence"]["Technology"]
+
+# A dictionary can be turned into a list
+# Each key/value pair is an element in the list
+dct.items()
+
+# What do the ( ) that enclose each element of the list mean?
+# --> Tuple.
+
+```
+]
+---
+template:inverse
+# Exercise: Dictionary
+---
+.left-column[
+## Data Types
+## Strings
+## Lists
+## Dictionary
+]
+
+.right-column[
+## EXERCISE:
+
+```python
+family = {'dad':'Homer', 'mom':'Marge', 'size':2,
+'kids': ['bart', 'lisa']}
+
+1. Print the name of the mom.
+2. Change the size to 5.
+3. Add 'Maggie' to the list of kids.
+4. Fix 'bart' and 'lisa' so that
+the first letter is capitalized.
+
+Bonus: Do this last step using a list comprehension.
+```
+]
+---
+.left-column[
+## Data Types
+## Strings
+## Lists
+## Dictionary
+]
+
+.right-column[
+## Solution
+```python
+family['mom']
+# returns 'Marge'
+
+family['size'] = 5
+# replaces existing value for 'size'
+
+family['kids'].append('Maggie')
+# access a list, then append 'Maggie' to it
+
+family['kids'][0] = 'Bart'
+family['kids'][1] = 'Lisa'
+# capitalize names by overwriting them
+
+Bonus:
+kids = [kid.capitalize() for kid in family['kids']]
+family['kids'] = kids
+
+OR
+
+i = 0
+for kid in family['kids']:
+  family['kids'][i] = kid.capitalize()
+  i +=1
+
+```
+
+]
+---
+template: inverse
+# Tuple Manipulation
+---
+
+.left-column[
+## Data Types
+## Strings
+## Lists
+## Dictionary
+## Tuples
+]
+
+.right-column[
+
+```python
+# Tuples are denoted by ()
+tup = ("Monty Python and the Flying Circus",
+1969, "British Comedy Group")
+
+type(tup)
+
+# Elements can be accessed in the same way as lists
+tup[0]
+
+# You can't change an element within a tuple
+tup[0] = "Monty Python"
+
+# Tuples can be "unpacked" by the following
+name, year, description = tup
+
+# Tuples can be nested within one another
+tup = ("Monty Python and the Flying Circus",
+(1969, "British Comedy Group"))
+```
+]
+---
+template: inverse
+# Loops
+---
+.left-column[
+## Data Types
+## Strings
+## Lists
+## Dictionary
+## Tuples
+## Loops
+]
+
+.right-column[
+## If / Else
+
+```python
+var1 = 10
+
+# If elif else statement
+# Whitespace is important
+if var1 > 5:
+    print "More than 5"
+elif var1 < 5:
+    print "Less than 5"
+else:
+    print "5"
+
+```
+]
+---
+
+.left-column[
+## Data Types
+## Strings
+## Lists
+## Dictionary
+## Tuples
+## Loops
+]
+
+.right-column[
+## While
+
+```python
+var1 = 1
+
+# While statement
+while var1 < 10:
+    print var1
+    var1 += 1
+
+    # This is commonly used shorthand for var1 = var1 + 1
+
+```
+]
+---
+.left-column[
+## Data Types
+## Strings
+## Lists
+## Dictionary
+## Tuples
+## Loops
+]
+
+.right-column[
+## For
+
+```python
+# For loop
+for i in range(0,10,2):
+    print i**2
+
+# For loop in the list
+fruits = ['apple', 'banana', 'cherry', 'plum']
+for i in range(len(fruits)):
+    print fruits[i].upper()
+
+# Better way
+for fruit in fruits:
+    print fruit.upper()
+
+# Dictionaries are also iterable
+for first in dct.items():
+    print first[0]
+
+
+for first, second in dct.items():
+    print second
+
+```
+]
+---
+template: inverse
+
+# Fin du cours Python intermédiaire.
+
+--
+# Avez-vous les questions?
+</textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        highlightStyle: 'tomorrow-night'
+      });
+    </script>
+  </body>
+</html>
